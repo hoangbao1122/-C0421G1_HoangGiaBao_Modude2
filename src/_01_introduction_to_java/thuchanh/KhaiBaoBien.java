@@ -1,4 +1,4 @@
-public class khai_bao_bien {
+public class KhaiBaoBien {
     public static void main(String[] args) {
         int a = 10;
         float b = 10.5f;

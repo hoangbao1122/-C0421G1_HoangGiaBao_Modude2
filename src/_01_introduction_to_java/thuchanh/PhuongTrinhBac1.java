@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class phuong_trinh_bac_1 {
+public class PhuongTrinhBac1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double a,b,c;

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class tinh_so_ngay_thang {
+public class TinhNgayThang {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Which month that you want to day");

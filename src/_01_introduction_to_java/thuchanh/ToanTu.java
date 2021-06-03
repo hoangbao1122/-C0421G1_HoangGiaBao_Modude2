@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class toan_tu {
+public class ToanTu {
     public static void main(String[] args) {
         float width;
         float height;
