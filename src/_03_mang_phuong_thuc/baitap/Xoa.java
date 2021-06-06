@@ -8,14 +8,21 @@ public class Xoa {
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhập vào giá trị phần tử cần xóa  cần xóa");
         int delteElement = scanner.nextInt();
+        boolean check  = false;
         for (int i =0;i<array.length;i++) {
             if (delteElement == array[i]) {
+                check = true;
                 for (int j = 0; j < array.length - 1; j++) {
                     array[j] = array[j + 1];
                     array[j + 1] = 0;
                 }
             }
             System.out.print(array[i] + " ");
+
+        }if (check == false){
+            System.out.println("");
+            System.out.println("số bn nhập ko có");
         }
+
     }
 }
