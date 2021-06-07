@@ -1,4 +1,4 @@
-package _04_lop_doi_tuong.baitap.Time.;
+package _04_lop_doi_tuong.baitap.Time;
 
 public class Main {
     public static void main(String[] args) {
