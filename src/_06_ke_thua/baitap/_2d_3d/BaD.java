@@ -23,10 +23,8 @@ public class BaD extends HaiD {
     public void setZ(float z) {
         this.z = z;
     }
-    public void SetXYZ(float x,float y,float z){
-        this.x = x;
-        this.y = y;
-
+    public void setXYZ(float x,float y,float z){
+        setXY(x,y);
         this.z = z;
     }
     public float[] getXYZ(){
