@@ -9,7 +9,8 @@ public class HaiD {
         this.x = x;
         this.y = y;
     }
-    public HaiD(){
+
+    public HaiD() {
 
     }
 
@@ -28,11 +29,13 @@ public class HaiD {
     public void setY(float y) {
         this.y = y;
     }
-    public void setXY(float x,float y){
+
+    public void setXY(float x, float y) {
         this.x = x;
         this.y = y;
 
     }
+
     public float[] getXY() {
         float[] array = new float[2];
         array[0] = this.x;
