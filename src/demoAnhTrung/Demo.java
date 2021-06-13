@@ -7,7 +7,7 @@ public class Demo {
 
     public static void main(String[] args) {
         System.out.println("chương trình quản lí sinh viên");
-        String[] student = new String[5];
+        Student[] student = new Student[5];
         while (true) {
             System.out.println("Menu chương trình");
             System.out.println("1:Xem danh sách sinh viên");
@@ -24,11 +24,11 @@ public class Demo {
                     addStudent(student);
                     break;
                 }
-                case 3: {
-                    updateStudent(student);
-                    break;
-
-                }
+//                case 3: {
+//                    updateStudent(student);
+//                    break;
+//
+//                }
                 case 4:{
                     deleteStudent(student);
                     break;
@@ -41,7 +41,7 @@ public class Demo {
         }
     }
 
-    public static void displayStudent(String[] student) {
+    public static void displayStudent(Student[] student) {
         int i;
         for (i = 0; i < student.length; i++) {
 
@@ -51,19 +51,29 @@ public class Demo {
         }
     }
 
-    public static void addStudent(String[] student) {
-        System.out.println("Nhập vào tên sinh viên muốn thêm");
-        String studentNew = scanner.nextLine();
+    public static void addStudent(Student[] student) {
 
-        int i;
-        for (i = 0; i < student.length; i++) {
+        System.out.println("nhập id sinh viên muốn thêm");
+        int id = scanner.nextInt();
+
+        System.out.println("nhập vào tên sv");
+        String name = scanner.next();
+
+        System.out.println("nhập vào tuôi sv");
+        int age = scanner.nextInt();
+
+        System.out.println("nhập vào địa chỉ");
+        String address = scanner.nextLine();
+
+        Student newStudent = new Student(id,name,age,address);
+        for (int i = 0; i < student.length; i++) {
             if (student[i] == null) {
-                student[i] = studentNew;
+                student[i] = newStudent;
                 break;
             }
         }
     }
-    public static void deleteStudent(String[] student){
+    public static void deleteStudent(Student[] student){
         System.out.println("nhập tên sinh viên muốn xóa");
         String detele = scanner.nextLine();
         int i;
@@ -73,20 +83,20 @@ public class Demo {
             }
         }
     }
-    public static void updateStudent(String[] student){
-        System.out.println("nhập tên sinh viên muốn sửa");
-        String update = scanner.nextLine();
-        int i;
-        boolean check = false;
-        for (i=0;i<student.length;i++){
-            if (update.equals(student[i])){
-                check = true;
-                System.out.println("cập nhập thông tin mới");
-                String updateNow = scanner.nextLine();
-                student[i] =updateNow;
-            }
-        }if (check = false){
-            System.out.println("Tên Sv bạn nhập ko đug");
-        }
-    }
+//    public static void updateStudent(Student[] student){
+//        System.out.println("nhập tên sinh viên muốn sửa");
+//        String update = scanner.nextLine();
+//        int i;
+//        boolean check = false;
+//        for (i=0;i<student.length;i++){
+//            if (update.equals(student[i])){
+//                check = true;
+//                System.out.println("cập nhập thông tin mới");
+//                String updateNow = scanner.nextLine();
+//                student[i] = updateNow;
+//            }
+//        }if (check = false){
+//            System.out.println("Tên Sv bạn nhập ko đug");
+//        }
+//    }
 }

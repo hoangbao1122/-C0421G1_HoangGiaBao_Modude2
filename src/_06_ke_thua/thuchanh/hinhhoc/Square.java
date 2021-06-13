@@ -1,27 +1,29 @@
 package _06_ke_thua.thuchanh.hinhhoc;
 
-public class Square extends Rectangle {
+import _07_abstract_classva_interface.baitap.Colorable.Colorable;
 
+public class Square extends Rectangle implements Colorable {
 
-    public Square(double side){
-        super(side,side);
+    public Square(){
+
     }
-    public Square( String color, boolean filled,double side) {
-        super(color, filled,side,side);
+
+    public Square(double side) {
+        super(side, side);
     }
-    public double getSide(){
+
+    public Square(String color, boolean filled, double side) {
+        super(color, filled, side, side);
+    }
+
+    public double getSide() {
         return getWidth();
     }
-    public void setSide(double side){
+
+    public void setSide(double side) {
         setWidth(side);
         setHeight(side);
     }
-    @Override
-    public void setWidth(double width) {
-        setSide(width);
-    }
-
-
     public void setLength(double length) {
         setSide(length);
     }
@@ -29,11 +31,11 @@ public class Square extends Rectangle {
     @Override
     public String toString() {
         return "A Square with side="
-                + getSide()
-                + ", which is a subclass of "
-                + super.toString();
+                + getSide();
+
     }
-
-
-
+    @Override
+    public void howToColor() {
+        System.out.println("Color all four sides..");
+    }
 }

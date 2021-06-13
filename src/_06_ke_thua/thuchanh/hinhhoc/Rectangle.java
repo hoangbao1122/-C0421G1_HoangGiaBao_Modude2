@@ -1,11 +1,28 @@
 package _06_ke_thua.thuchanh.hinhhoc;
 
-public class Rectangle extends Shape{
+import _07_abstract_classva_interface.baitap.Resizeable.Resizeable;
+
+public class Rectangle extends Shape implements Resizeable {
     private double width;
     private double height;
+    private double resize;
+    public Rectangle(){
 
-    public Rectangle(double side, double v){
+    }
+    public Rectangle(double side, double v) {
 
+    }
+
+    public Rectangle(double resize) {
+        this.resize = resize;
+    }
+
+    public double getResize() {
+        return resize;
+    }
+
+    public void setResize(double resize) {
+        this.resize = resize;
     }
 
     public Rectangle(String color, boolean filled, double width, double height) {
@@ -29,11 +46,13 @@ public class Rectangle extends Shape{
     public void setHeight(double height) {
         this.height = height;
     }
-    public double getArea(){
+
+    public double getArea() {
         return width * height;
     }
-    public double getPerimeter(){
-        return (width + height) * 2 ;
+
+    public double getPerimeter() {
+        return (width + height) * 2;
     }
 
     @Override
@@ -41,6 +60,14 @@ public class Rectangle extends Shape{
         return "Rectangle{" +
                 "Area=" + getArea() +
                 ", perimeter=" + getPerimeter() +
+                ", tăng size" + getWidth() +
+                ", tăng size" + getHeight() +
                 '}';
+    }
+
+    @Override
+    public void resize(double percent) {
+        setWidth(getWidth() + getResize());
+        setHeight(getHeight() + getResize());
     }
 }

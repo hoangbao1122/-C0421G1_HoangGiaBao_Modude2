@@ -8,7 +8,6 @@ public class Main {
         circle.setRadius(3);
         circle.setColor("red");
         System.out.println(circle.toString());
-
         Cylinder cylinder = new Cylinder(1,"red",20);
         System.out.println(cylinder.toString());
     }

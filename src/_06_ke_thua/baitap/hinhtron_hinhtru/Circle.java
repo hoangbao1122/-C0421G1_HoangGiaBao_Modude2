@@ -1,15 +1,39 @@
 package _06_ke_thua.baitap.hinhtron_hinhtru;
 
-public class Circle {
+import _05_access_modifier_static_method_static_property.baitap.Circle.Cricle;
+import _07_abstract_classva_interface.baitap.Resizeable.Resizeable;
+
+public class Circle implements Resizeable {
     private double radius;
     private String color;
+    private boolean filler;
+    private double percent = 0;
 
-    public Circle(){
+
+    public Circle() {
 
     }
-    public Circle(double radius,String color){
+
+    public Circle(double percent) {
+        this.percent = percent;
+    }
+
+    public Circle(double radius, String color) {
         this.radius = radius;
         this.color = color;
+    }
+
+    public Circle(double radius, String color, boolean filler) {
+        this.radius = radius;
+        this.color = color;
+        this.filler = filler;
+    }
+
+    public Circle(double radius, String color, boolean filler, double percent) {
+        this.radius = radius;
+        this.color = color;
+        this.filler = filler;
+        this.percent = percent;
     }
 
     public double getRadius() {
@@ -27,9 +51,23 @@ public class Circle {
     public void setColor(String color) {
         this.color = color;
     }
-    public double getArea(){
+
+    public double getPercent() {
+        return percent;
+    }
+
+    public void setPercent(double percent) {
+        this.percent = percent;
+    }
+
+    public double getArea() {
         double Area;
-        return Area = Math.pow(this.radius,2) * Math.PI;
+        return Area = Math.pow(this.radius, 2) * Math.PI;
+    }
+
+    @Override
+    public void resize(double percent) {
+        setRadius(getRadius() + percent);
     }
 
     @Override
@@ -40,4 +78,6 @@ public class Circle {
                 " dien tich=" + getArea() +
                 '}';
     }
+
+
 }

@@ -11,7 +11,6 @@ public class Main {
         circles[0] = new ComparableCircle(3.6,"red");
         circles[1] = new ComparableCircle();// ra mac dinh
         circles[2] = new ComparableCircle(3.2,"yellow",false);
-
         for (ComparableCircle circle:circles){
             System.out.println(circle);
         }
