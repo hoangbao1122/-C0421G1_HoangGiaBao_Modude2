@@ -10,6 +10,7 @@ public class MyLinkedList {
         head = new Node(data);
     }
 
+
     private class Node {
         private Node next;
         private Object data;
