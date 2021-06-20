@@ -6,7 +6,7 @@ public class DemChuoi {
             Map<String,Integer>map = new TreeMap<>();
             String string = "h o a n g b a o";
             String chuThuong = string.toLowerCase();
-            String[]cat = chuThuong.split(" ");
+            String[]cat = chuThuong.split("");
             for (String chuoi:cat){
                 System.out.print(chuoi + "");
             }
