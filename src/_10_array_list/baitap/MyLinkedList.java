@@ -1,5 +1,7 @@
 package  _10_array_list.baitap;
 
+import _11_Stack_Queue.thuchanh.Queue.Note;
+
 public class MyLinkedList<E> {
     private Node head;
     private Node tail;
@@ -133,4 +135,15 @@ public class MyLinkedList<E> {
         }
         numNodes = 0;
     }
+    public E getLast(){
+        Node temp = head;
+        for (int i = 0;i<numNodes;i++){
+            temp = temp.next;
+        }
+        return (E)temp.data;
+    }
+    public E getFirst(){
+       return (E) head.data;
+    }
+
 }
