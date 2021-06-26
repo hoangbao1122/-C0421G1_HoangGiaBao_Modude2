@@ -1,6 +1,8 @@
 package _12_java_collection_framework.baitap;
 
-public class Product implements Comparable<Product> {
+import java.util.Comparator;
+
+public class Product implements Comparator<Product> {
     private int id;
     private String product;
     private double money;
@@ -48,14 +50,11 @@ public class Product implements Comparable<Product> {
                 '}';
     }
 
+
     @Override
-    public int compareTo(Product o) {
-        if (this.money > o.getMoney()){
-            return 1;
-        }else if (this.money<o.getMoney()){
-            return -1;
-        }else {
-            return 0;
-        }
+    public int compare(Product o1, Product o2) {
+        return (int) (o1.getMoney() - o2.getMoney());
     }
+
+
 }

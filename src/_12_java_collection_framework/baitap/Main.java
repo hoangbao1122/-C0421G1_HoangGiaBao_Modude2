@@ -1,12 +1,18 @@
 package _12_java_collection_framework.baitap;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
+
+    static LinkedList<Product> manager = new LinkedList<>();
+    private static Scanner scanner = new Scanner(System.in);
+    private static Product product = new Product();
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        LinkedList<String> manager = new LinkedList<>();
+
+
         while (true) {
             System.out.println("Menu chương trình");
             System.out.println("1:Hiển thị sản phẩm");
@@ -15,7 +21,6 @@ public class Main {
             System.out.println("4 Xóa thông tin sản phẩm");
             System.out.println("5 Tìm kiếm theo index sản phẩm");
             System.out.println("6 Sắp xếp sản phẩm");
-
             String money;
             int choice = scanner.nextInt();
             switch (choice) {
@@ -28,7 +33,7 @@ public class Main {
                     break;
                 }
                 case 3: {
-                    Sua(manager);
+                    edit(manager);
                     break;
                 }
                 case 4: {
@@ -37,8 +42,10 @@ public class Main {
                 }
                 case 5:{
                     search(manager);
+                    break;
                 }
                 case 6:{
+                    sort();
                     break;
                 }
                 default: {
@@ -49,8 +56,7 @@ public class Main {
         }
     }
 
-    public static void add(LinkedList<String> manager){
-        Scanner scanner = new Scanner(System.in);
+    public static void add(LinkedList<Product> manager){
         System.out.println("nhập vào id sản phẩm");
         int idSanpham = scanner.nextInt();
         System.out.println("nhập vào name sản phẩm");
@@ -59,15 +65,14 @@ public class Main {
         int money = scanner.nextInt();
 
         Product newSamPham = new Product(idSanpham,nameSanpham,money);
-        manager.add(String.valueOf(newSamPham));
+        manager.add(newSamPham);
     }
-    public static void display(LinkedList<String> manager){
+    public static void display(LinkedList<Product> manager){
        for (int i = 0 ;i<manager.size();i++){
            System.out.println(manager.get(i));
        }
     }
-    public static void remove(LinkedList<String> manager ){
-        Scanner scanner = new Scanner(System.in);
+    public static void remove(LinkedList<Product> manager ){
         System.out.println("nhập vào vị trí index muốn xóa");
         int inputXoa = scanner.nextInt();
         for (int i = 0;i<manager.size();i++){
@@ -77,19 +82,22 @@ public class Main {
             }
         }
     }
-    public static void Sua(LinkedList<String> manager){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("nhập vào index muốn sửa");
+    public static void edit(LinkedList<Product> manager){
+        System.out.println("nhập vào id muốn edit");
         int inputSua = scanner.nextInt();
-        for (int i =0;i<manager.size();i++){
-            if (inputSua == i){
-                manager.remove(i);
-                 add(manager);
-            }
-        }
+        for (Product products : manager){
+           if (inputSua == products.getId()){
+                   System.out.println("nhập vào tên muốn đổi");
+                   String inputName = scanner.next();
+                   products.setProduct(inputName);
+                   System.out.println("nhập vào số tiền muốn đổi");
+                   int inputMoney = scanner.nextInt();
+                   products.setMoney(inputMoney);
+
+           }
+       }
     }
-    public static void search(LinkedList<String> manager){
-        Scanner scanner = new Scanner(System.in);
+    public static void search(LinkedList<Product> manager){
         System.out.println("nhập vào index  sản phẩm");
         int input = scanner.nextInt();
         for (int i = 0;i<manager.size();i++){
@@ -97,6 +105,10 @@ public class Main {
                 System.out.println(manager.get(i));
             }
         }
+    }
+    public static void sort(){
+        Collections.sort(manager,new MoneyComparator());
+        display(manager);
     }
 
 }
