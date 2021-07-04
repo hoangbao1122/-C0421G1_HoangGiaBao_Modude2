@@ -1,6 +1,10 @@
 package case_study.serivce;
 
-public class CustomerService implements Service {
+import java.util.List;
+
+public class BookingServiceImpl implements Service {
+
+
     @Override
     public void add() {
 

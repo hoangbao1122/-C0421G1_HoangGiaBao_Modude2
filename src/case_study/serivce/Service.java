@@ -1,6 +1,8 @@
 package case_study.serivce;
 
-public interface Service {
+import java.util.List;
+
+public interface Service<T> {
     void add();
     void edit();
     void display();

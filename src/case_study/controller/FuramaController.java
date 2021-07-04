@@ -45,6 +45,7 @@ public class FuramaController {
                 }
                 default:{
                     System.out.println("error");
+                    break;
                 }
             }
         }

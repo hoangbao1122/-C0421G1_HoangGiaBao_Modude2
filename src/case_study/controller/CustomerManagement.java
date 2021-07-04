@@ -1,9 +1,13 @@
 package case_study.controller;
 
+import case_study.serivce.CustomerServiceImpl;
+import case_study.serivce.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
 public class CustomerManagement {
     public static void CustomerManagement(){
+        CustomerServiceImpl customerService = new CustomerServiceImpl();
         Scanner scanner = new Scanner(System.in);
         System.out.println("1 = display ");
         System.out.println("2 = add ");
@@ -12,15 +16,15 @@ public class CustomerManagement {
         int input = scanner.nextInt();
         switch (input){
             case 1:{
-                System.out.println("display");
+                customerService.display();
                 break;
             }
             case 2:{
-                System.out.println("Add");
+                customerService.add();
                 break;
             }
             case 3:{
-                System.out.println("edit");
+                customerService.edit();
                 break;
             }
             case 4:{

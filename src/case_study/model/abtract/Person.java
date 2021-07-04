@@ -1,19 +1,21 @@
 package case_study.model.abtract;
 
-public abstract class Person {
+import java.io.Serializable;
+
+public abstract class Person implements Serializable {
     private int id;
     private String name;
     private String birthday;
     private String gender;
-    private double CMND;
-    private int number;
+    private String CMND;
+    private String number;
     private String email;
     private String address;
 
     public Person(){
 
     }
-    public Person(int id, String name, String birthday, String gender, double CMND, int number, String email, String address) {
+    public Person(int id, String name, String birthday, String gender, String CMND, String number, String email, String address) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -56,19 +58,19 @@ public abstract class Person {
         this.gender = gender;
     }
 
-    public double getCMND() {
+    public String getCMND() {
         return CMND;
     }
 
-    public void setCMND(double CMND) {
+    public void setCMND(String CMND) {
         this.CMND = CMND;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 

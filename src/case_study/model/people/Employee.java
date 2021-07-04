@@ -2,12 +2,16 @@ package case_study.model.people;
 
 import case_study.model.abtract.Person;
 
-public class Employee extends Person {
+import java.io.Serializable;
+
+public class Employee extends Person implements Serializable {
     private String trinhDo;
     private String viTri;
     private double luong;
+    public Employee(int id, String name, String bithday, String gender, String cmnd, String number, String email, String address, String loaiKhach){
 
-    public Employee(){
+    }
+    public Employee(int inputId, String inputName, String inputBirthday, String inputGender, double inputCmnd, double inputNumber, String inputAddress, String trinhDo, String vitri, double luong) {
 
     }
 
@@ -17,7 +21,7 @@ public class Employee extends Person {
         this.luong = luong;
     }
 
-    public Employee(int id, String name, String birthday, String gender, double CMND, int number, String email, String address, String trinhDo, String viTri, double luong) {
+    public Employee(int id, String name, String birthday, String gender, String CMND, String number, String email, String address, String trinhDo, String viTri, double luong) {
         super(id, name, birthday, gender, CMND, number, email, address);
         this.trinhDo = trinhDo;
         this.viTri = viTri;
@@ -48,12 +52,33 @@ public class Employee extends Person {
         this.luong = luong;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Employee{" +
+//                "id=" + this.getId() +
+//                ", name='" + this.getName() + '\'' +
+//                ", birthday='" + this.getBirthday() + '\'' +
+//                ", gender='" + this.getGender() + '\'' +
+//                ", CMND=" + this.getCMND() +
+//                ", number=" + this.getNumber() +
+//                ", email='" + this.getEmail() + '\'' +
+//                ", address='" + this.getAddress() + '\'' +
+//                ",trinhDo='" + trinhDo + '\'' +
+//                ", viTri='" + viTri + '\'' +
+//                ", luong=" + luong +
+//
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
         return "Employee{" +
                 "trinhDo='" + trinhDo + '\'' +
                 ", viTri='" + viTri + '\'' +
                 ", luong=" + luong +
+                super.toString() +
                 '}';
     }
 }
+

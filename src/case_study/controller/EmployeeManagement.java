@@ -1,8 +1,12 @@
 package case_study.controller;
 
+import case_study.common.WriteAndReadFile;
+import case_study.serivce.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
-public class EmployeeManagement {
+public  class EmployeeManagement {
+    private  static EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
     public static void EmployeeManagement(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("1 = display ");
@@ -13,15 +17,15 @@ public class EmployeeManagement {
         boolean check = true;
         switch (input){
             case 1:{
-                System.out.println("display");
+                employeeService.display();
                 break;
             }
             case 2:{
-                System.out.println("Add");
+                employeeService.add();
                 break;
             }
             case 3:{
-                System.out.println("edit");
+                employeeService.edit();
                 break;
             }
             case 4:{
