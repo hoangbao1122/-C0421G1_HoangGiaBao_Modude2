@@ -3,6 +3,7 @@ package case_study.serivce;
 import _17_IO_binary_file_serialization.thuchanh.DocGhiFileNhiPhan.WriteAndRead;
 import case_study.common.WriteAndReadFile;
 import case_study.model.people.Employee;
+import case_study.serivce.interface_all.EmployeeService;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class EmployeeServiceImpl implements Service, Serializable {
+public class EmployeeServiceImpl implements EmployeeService {
     private static Scanner scanner = new Scanner(System.in);
     private static List<Employee> listEmployee = new ArrayList<>();
     private static WriteAndReadFile writeAndReadFile = new WriteAndReadFile();
@@ -295,11 +296,5 @@ public class EmployeeServiceImpl implements Service, Serializable {
         }
 
     }
-
-    @Override
-    public void delete() {
-
-    }
-
 
 }

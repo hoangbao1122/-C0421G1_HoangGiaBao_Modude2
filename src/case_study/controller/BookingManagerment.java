@@ -1,10 +1,13 @@
 package case_study.controller;
 
+import case_study.serivce.booking.BookingServiceImpl;
+
 import java.util.Scanner;
 
 public class BookingManagerment {
     public static void BookingManagerment(){
         Scanner scanner = new Scanner(System.in);
+        BookingServiceImpl bookingService = new BookingServiceImpl();
         System.out.println("1 = display ");
         System.out.println("2 = add ");
         System.out.println("3 = Create new constracts ");
@@ -14,11 +17,11 @@ public class BookingManagerment {
         int input = scanner.nextInt();
         switch (input){
             case 1:{
-                System.out.println("display");
+                bookingService.display();
                 break;
             }
             case 2:{
-                System.out.println("Add");
+                bookingService.add();
                 break;
             }
             case 3:{

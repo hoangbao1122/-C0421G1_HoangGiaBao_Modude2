@@ -3,29 +3,29 @@ package case_study.model.Furama;
 import case_study.model.abtract.Facility;
 
 public class House extends Facility {
-    private int roomStandard;
+    private String roomStandard;
     private int NumberOfFlorr;
 
    public House(){
 
    }
 
-    public House(int roomStandard, int numberOfFlorr) {
+    public House(String roomStandard, int numberOfFlorr) {
         this.roomStandard = roomStandard;
         NumberOfFlorr = numberOfFlorr;
     }
 
-    public House(String name, int area, int moneyRend, int maxPeople, String rentalType, int roomStandard, int numberOfFlorr) {
+    public House(String name, int area, int moneyRend, int maxPeople, String rentalType, String roomStandard, int numberOfFlorr) {
         super(name, area, moneyRend, maxPeople, rentalType);
         this.roomStandard = roomStandard;
         NumberOfFlorr = numberOfFlorr;
     }
 
-    public int getRoomStandard() {
+    public String getRoomStandard() {
         return roomStandard;
     }
 
-    public void setRoomStandard(int roomStandard) {
+    public void setRoomStandard(String roomStandard) {
         this.roomStandard = roomStandard;
     }
 
@@ -42,6 +42,7 @@ public class House extends Facility {
         return "House{" +
                 "roomStandard=" + roomStandard +
                 ", NumberOfFlorr=" + NumberOfFlorr +
+                super.toString() +
                 '}';
     }
 }

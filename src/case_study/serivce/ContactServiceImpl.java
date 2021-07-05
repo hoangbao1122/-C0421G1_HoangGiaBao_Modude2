@@ -1,6 +1,6 @@
 package case_study.serivce;
 
-import java.util.List;
+import case_study.serivce.interface_all.Service;
 
 public class ContactServiceImpl implements Service {
 
@@ -20,8 +20,4 @@ public class ContactServiceImpl implements Service {
 
     }
 
-    @Override
-    public void delete() {
-
-    }
 }

@@ -2,7 +2,9 @@ package case_study.model.abtract;
 
 import TestSuongSuong.Villa;
 
-public abstract class Facility {
+import java.io.Serializable;
+
+public abstract class Facility implements Serializable {
     private String name;
     private int area;
     private int MoneyRend; // chi phí thuê

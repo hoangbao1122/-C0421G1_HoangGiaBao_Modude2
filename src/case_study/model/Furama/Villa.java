@@ -3,7 +3,7 @@ package case_study.model.Furama;
 import case_study.model.abtract.Facility;
 
 public class Villa extends Facility {
-    private int roomStandard; // tiêu chuản phòng;
+    private String roomStandard; // tiêu chuản phòng;
     private int arePool;
     private int numberOfFloor; // số tầng
 
@@ -11,24 +11,24 @@ public class Villa extends Facility {
 
     }
 
-    public Villa(int roomStandard, int arePool, int numberOfFloor) {
+    public Villa(String roomStandard, int arePool, int numberOfFloor) {
         this.roomStandard = roomStandard;
         this.arePool = arePool;
         this.numberOfFloor = numberOfFloor;
     }
 
-    public Villa(String name, int area, int moneyRend, int maxPeople, String rentalType, int roomStandard, int arePool, int numberOfFloor) {
+    public Villa(String name, int area, int moneyRend, int maxPeople, String rentalType, String roomStandard, int arePool, int numberOfFloor) {
         super(name, area, moneyRend, maxPeople, rentalType);
         this.roomStandard = roomStandard;
         this.arePool = arePool;
         this.numberOfFloor = numberOfFloor;
     }
 
-    public int getRoomStandard() {
+    public String getRoomStandard() {
         return roomStandard;
     }
 
-    public void setRoomStandard(int roomStandard) {
+    public void setRoomStandard(String roomStandard) {
         this.roomStandard = roomStandard;
     }
 
@@ -54,6 +54,7 @@ public class Villa extends Facility {
                 "roomStandard=" + roomStandard +
                 ", arePool=" + arePool +
                 ", numberOfFloor=" + numberOfFloor +
+                super.toString() +
                 '}';
     }
 }
