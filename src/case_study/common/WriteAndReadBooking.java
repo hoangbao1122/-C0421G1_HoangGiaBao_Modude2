@@ -1,20 +1,20 @@
 package case_study.common;
 
+import case_study.model.bookingAndContact.Booking;
+
 import java.io.*;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
-public class WriteAndReadFacility<T,E> {
-    public  void Write(String pathFile, Map<T,E> map) {
+public class WriteAndReadBooking {
+    public  void Write(String pathFile, Collection<Booking> collection) {
         FileOutputStream fileOutputStream = null;
         ObjectOutputStream objectOutputStream = null;
-
         try {
             fileOutputStream = new FileOutputStream(pathFile);
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(map);
+            objectOutputStream.writeObject(collection);
         } catch (IOException e) {
             e.printStackTrace();
         }finally {
@@ -31,14 +31,14 @@ public class WriteAndReadFacility<T,E> {
         }
     }
 
-    public Map<T,E> Read(String pathfile){
-        Map<T,E> map = new LinkedHashMap<>();
+    public Collection<Booking> Read(String pathfile) {
         FileInputStream fileInputStream = null;
         ObjectInputStream objectInputStream = null;
+        Collection<Booking> collection = null;
         try {
             fileInputStream = new FileInputStream(pathfile);
             objectInputStream = new ObjectInputStream(fileInputStream);
-            map = (Map<T,E>) objectInputStream.readObject();
+            collection = (Collection<Booking>)objectInputStream.readObject();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -57,6 +57,6 @@ public class WriteAndReadFacility<T,E> {
                 e.printStackTrace();
             }
         }
-        return map;
+        return collection;
     }
 }

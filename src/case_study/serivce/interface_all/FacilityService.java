@@ -8,6 +8,6 @@ public interface FacilityService extends Service {
     Map<Facility,Integer>getVilla();
     Map<Facility,Integer>getHouse();
     Map<Facility,Integer>getRoom();
-    Map<Facility,Integer>getAll();
-//    void maintenanceDisplay();
+
+
 }

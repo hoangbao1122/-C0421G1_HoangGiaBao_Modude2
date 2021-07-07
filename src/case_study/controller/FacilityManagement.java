@@ -7,11 +7,12 @@ import case_study.model.Furama.Villa;
 import case_study.model.abtract.Facility;
 import case_study.serivce.FacilityServiceImpl;
 
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class FacilityManagement {
+public class FacilityManagement{
     public static void FacilityManagement(){
         Scanner scanner = new Scanner(System.in);
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
@@ -51,14 +52,16 @@ public class FacilityManagement {
     private static final String filePathVilla = "src\\case_study\\data\\villa.txt";
     private static final String filePathHouse = "src\\case_study\\data\\house.txt";
     private static final String filePathRoom = "src\\case_study\\data\\room.txt";
+    private static final String fileFacility = "src\\case_study\\data\\FacilityService.txt";
     public static Map<Facility,Integer> villa = new LinkedHashMap<>();
     public static Map<Facility, Integer> house = new LinkedHashMap<>();
     public static Map<Facility,Integer> room = new LinkedHashMap<>();
+    private static Map<Facility,Integer> map = new LinkedHashMap<>();
 
     public static void addVilla() {
 
-        System.out.println("nhập vào name ");
-        String name = scanner.next();
+        System.out.println("bạn chọn dịch vụ villa");
+        String name = "villa";
 
         System.out.println("nhập vào diện tích");
         int area = scanner.nextInt();
@@ -82,14 +85,17 @@ public class FacilityManagement {
         int numberOfFloor = scanner.nextInt();
 
         villa.put(new Villa(name, area, moneyRend, maxPeople, rentalType, roomStandard, arePool, numberOfFloor), 1);
+
         writeAndRead.Write(filePathVilla, villa);
+        map.putAll(villa);
+        writeAndRead.Write(fileFacility,map);
     }
 
     public static void addHouse() {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("nhập vào name ");
-        String name = scanner.next();
+        System.out.println("bạn chọn dịch vụ house");
+        String name = "house";
 
         System.out.println("nhập vào diện tích");
         int area = scanner.nextInt();
@@ -111,12 +117,14 @@ public class FacilityManagement {
 
         house.put(new House(name, area, moneyRend, maxPeople, rentalType, roomStandard, numberOfFloor), 1);
         writeAndRead.Write(filePathHouse, house);
+        map.putAll(villa);
+        writeAndRead.Write(fileFacility,map);
     }
 
     public static void addRoom() {
 
-        System.out.println("nhập vào name ");
-        String name = scanner.next();
+        System.out.println("bạn đã chọn room");
+        String name = "room";
 
         System.out.println("nhập vào diện tích");
         int area = scanner.nextInt();
@@ -136,5 +144,13 @@ public class FacilityManagement {
 
         room.put(new Room(name, area, moneyRend, maxPeople, rentalType, serviceFree), 1);
         writeAndRead.Write(filePathRoom, room);
+        map.putAll(villa);
+        writeAndRead.Write(fileFacility,map);
     }
+
+    public static Map<Facility,Integer>getMap(){
+        return map;
+    }
+
+
 }

@@ -1,6 +1,8 @@
 package case_study.model.bookingAndContact;
 
-public class Booking {
+import java.io.Serializable;
+
+public class Booking implements Serializable {
     private int idBooking;
     private String startDate;
     private String endDate;

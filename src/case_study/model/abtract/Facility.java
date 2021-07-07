@@ -14,6 +14,7 @@ public abstract class Facility implements Serializable {
     public Facility(){
 
     }
+
     public Facility(String name, int area, int moneyRend, int maxPeople, String rentalType) {
         this.name = name;
         this.area = area;
@@ -21,6 +22,7 @@ public abstract class Facility implements Serializable {
         this.maxPeople = maxPeople;
         this.rentalType = rentalType;
     }
+
 
     public String getName() {
         return name;
@@ -65,7 +67,8 @@ public abstract class Facility implements Serializable {
     @Override
     public String toString() {
         return "Facility{" +
-                "name='" + name + '\'' +
+
+                ", name='" + name + '\'' +
                 ", area=" + area +
                 ", MoneyRend=" + MoneyRend +
                 ", maxPeople=" + maxPeople +

@@ -8,7 +8,7 @@ public class Customer extends Person implements Serializable {
     private String loaiKhach;
 
 
-    public Customer(Employee employee) {
+    public Customer() {
     }
 
     public Customer(String loaiKhach) {
