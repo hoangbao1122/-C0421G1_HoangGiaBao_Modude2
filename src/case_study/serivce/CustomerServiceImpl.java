@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class CustomerServiceImpl implements CustomerService {
     private Scanner scanner = new Scanner(System.in);
-    private static List<Customer> linkedList = new LinkedList<>();
+    public static List<Customer> linkedList = new LinkedList<>();
     private static WriteAndReadFile writeAndReadFile = new WriteAndReadFile();
     private static final String filePath = "src\\case_study\\data\\customer.txt";
 
@@ -204,5 +204,10 @@ public class CustomerServiceImpl implements CustomerService {
             System.out.println(customer.toString());
         }
 
+    }
+
+    @Override
+    public List<Customer> getAll() {
+        return linkedList;
     }
 }
