@@ -1,4 +1,4 @@
-package case_study.serivce;
+package case_study.serivce.CusAndEmp;
 
 import _17_IO_binary_file_serialization.thuchanh.DocGhiFileNhiPhan.WriteAndRead;
 import case_study.common.WriteAndReadFile;

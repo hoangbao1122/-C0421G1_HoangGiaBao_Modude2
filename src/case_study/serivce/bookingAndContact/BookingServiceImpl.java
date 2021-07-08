@@ -1,15 +1,19 @@
-package case_study.serivce.booking;
+package case_study.serivce.bookingAndContact;
+
 import case_study.common.WriteAndReadBooking;
-import case_study.controller.FacilityManagement;
+
 import case_study.lib.ComparatorBooking;
 import case_study.model.abtract.Facility;
 import case_study.model.bookingAndContact.Booking;
 import case_study.model.people.Customer;
-import case_study.serivce.CustomerServiceImpl;
+import case_study.serivce.CusAndEmp.CustomerServiceImpl;
+
 import case_study.serivce.interface_all.BookingService;
+
+
 import java.util.*;
 
-
+import static case_study.controller.FacilityManagement.getMap;
 
 
 public class BookingServiceImpl implements BookingService {
@@ -23,13 +27,14 @@ public class BookingServiceImpl implements BookingService {
     public void add() {
         CustomerServiceImpl customerService = new CustomerServiceImpl();
         customerService.display();
-
-
+        for (Facility s: getMap().keySet()){
+            System.out.println(s + " " + s.getName() + " bao");
+        }
         System.out.println("nhập id khách hàng");
         int idCus = scanner.nextInt();
 
-        for (Customer customer:new CustomerServiceImpl().getAll()){
-            if (customer.getId() == idCus){
+        for (Customer customer : new CustomerServiceImpl().getAll()) {
+            if (customer.getId() == idCus) {
                 idCus = customer.getId();
             }
         }
@@ -44,9 +49,10 @@ public class BookingServiceImpl implements BookingService {
         System.out.println("nhập loại dich vu");
         String serviceType = scanner.next();
         set.add(new Booking(idBooking, startDate, endDate, idCus, serviceName, serviceType));
-        writeAndReadBooking.Write(filePath,set);
+        writeAndReadBooking.Write(filePath, set);
 
     }
+
     @Override
     public void edit() {
 
@@ -54,24 +60,10 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void display() {
-       set =  writeAndReadBooking.Read(filePath);
-        for (Booking booking:set){
+        set = writeAndReadBooking.Read(filePath);
+        for (Booking booking : set) {
             System.out.println(booking);
         }
     }
 
-    @Override
-    public void displayListContact() {
-
-    }
-
-    @Override
-    public void createContact() {
-
-    }
-
-    @Override
-    public void EditContact() {
-
-    }
 }

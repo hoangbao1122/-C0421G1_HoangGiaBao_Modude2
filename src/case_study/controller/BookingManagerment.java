@@ -1,6 +1,7 @@
 package case_study.controller;
 
-import case_study.serivce.booking.BookingServiceImpl;
+import case_study.serivce.bookingAndContact.BookingServiceImpl;
+import case_study.serivce.bookingAndContact.ContactServiceImpl;
 
 import java.util.Scanner;
 
@@ -8,11 +9,12 @@ public class BookingManagerment {
     public static void BookingManagerment(){
         Scanner scanner = new Scanner(System.in);
         BookingServiceImpl bookingService = new BookingServiceImpl();
+        ContactServiceImpl contactService = new ContactServiceImpl();
         System.out.println("1 = display ");
         System.out.println("2 = add ");
         System.out.println("3 = Create new constracts ");
         System.out.println("4 = edit ");
-        System.out.println("5 = trả về list danhsach");
+        System.out.println("5 = hiển thị hợp đồng ");
         System.out.println("6 = return menu");
         int input = scanner.nextInt();
         switch (input){
@@ -25,15 +27,15 @@ public class BookingManagerment {
                 break;
             }
             case 3:{
-                System.out.println("Create new constracts");
+                contactService.add();
                 break;
             }
             case 4:{
-                System.out.println("edit");
+                contactService.edit();
                 break;
             }
             case 5:{
-                System.out.println("trả về list danhsach");
+                contactService.display();
                 break;
             }
             case 6:{

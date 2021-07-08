@@ -1,7 +1,6 @@
 package case_study.controller;
 
-import case_study.serivce.CustomerServiceImpl;
-import case_study.serivce.EmployeeServiceImpl;
+import case_study.serivce.CusAndEmp.CustomerServiceImpl;
 
 import java.util.Scanner;
 

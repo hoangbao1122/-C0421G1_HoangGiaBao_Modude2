@@ -1,4 +1,4 @@
-package case_study.serivce;
+package case_study.serivce.faciliti;
 
 
 import case_study.common.WriteAndReadFacility;

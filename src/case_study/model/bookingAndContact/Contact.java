@@ -1,6 +1,8 @@
 package case_study.model.bookingAndContact;
 
-public class Contact {
+import java.io.Serializable;
+
+public class Contact implements Serializable {
     private int idContact;
     private int idBooking;
     private double moneyTraTruoc;

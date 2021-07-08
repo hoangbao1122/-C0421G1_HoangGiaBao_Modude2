@@ -5,7 +5,7 @@ import case_study.model.Furama.House;
 import case_study.model.Furama.Room;
 import case_study.model.Furama.Villa;
 import case_study.model.abtract.Facility;
-import case_study.serivce.FacilityServiceImpl;
+import case_study.serivce.faciliti.FacilityServiceImpl;
 
 
 import java.util.LinkedHashMap;

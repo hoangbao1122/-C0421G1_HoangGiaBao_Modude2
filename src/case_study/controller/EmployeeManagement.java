@@ -1,7 +1,6 @@
 package case_study.controller;
 
-import case_study.common.WriteAndReadFile;
-import case_study.serivce.EmployeeServiceImpl;
+import case_study.serivce.CusAndEmp.EmployeeServiceImpl;
 
 import java.util.Scanner;
 

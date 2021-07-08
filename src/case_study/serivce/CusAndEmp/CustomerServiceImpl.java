@@ -1,11 +1,9 @@
-package case_study.serivce;
+package case_study.serivce.CusAndEmp;
 
 import case_study.common.WriteAndReadFile;
 import case_study.model.people.Customer;
-import case_study.model.people.Employee;
 import case_study.serivce.interface_all.CustomerService;
 
-import java.io.FileOutputStream;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
