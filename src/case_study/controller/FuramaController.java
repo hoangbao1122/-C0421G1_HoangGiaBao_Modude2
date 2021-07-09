@@ -3,17 +3,32 @@ package case_study.controller;
 import java.util.Scanner;
 
 public class FuramaController {
+    private static Scanner scanner = new Scanner(System.in);
+
+    static int choice(){
+        boolean check = false;
+        int choice = 0;
+        while (!check){
+            try {
+                System.out.println("nhập vào chức năng muốn chọn");
+                choice = Integer.parseInt(scanner.next());
+                check = true;
+            }catch (NumberFormatException e){
+                System.out.println("nhập số giùm");
+            }
+        }
+        return choice;
+    }
     public static void displayMainMenu(){
-        Scanner scanner = new Scanner(System.in);
+
         System.out.println("choose 1 = Employee Management");
         System.out.println("choose 2 = Customer Management");
         System.out.println("choose 3 = Facility Management");
         System.out.println("choose 4 = Booking Management");
         System.out.println("choose 5 = Promotion Management");
         System.out.println("choose 6 = exit");
-        int choice = scanner.nextInt();
         while (true){
-            switch (choice){
+            switch (choice()){
                 case 1:{
                     System.out.println("Employee Management");
                     EmployeeManagement.EmployeeManagement();

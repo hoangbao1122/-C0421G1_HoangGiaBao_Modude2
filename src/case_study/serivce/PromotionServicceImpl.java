@@ -23,7 +23,10 @@ public class PromotionServicceImpl implements PromotionServicce {
 
     @Override
     public void display() {
-    new BookingServiceImpl().display();
+    BookingServiceImpl bookingService = new BookingServiceImpl();
+    bookingService.display();
+        System.out.println("nhập vào năm sử dụng dịch vụ");
+        int year = scanner.nextInt();
     }
 
     @Override

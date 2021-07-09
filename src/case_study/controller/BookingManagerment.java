@@ -5,19 +5,20 @@ import case_study.serivce.bookingAndContact.ContactServiceImpl;
 
 import java.util.Scanner;
 
+import static case_study.controller.FuramaController.choice;
+
 public class BookingManagerment {
     public static void BookingManagerment(){
         Scanner scanner = new Scanner(System.in);
         BookingServiceImpl bookingService = new BookingServiceImpl();
         ContactServiceImpl contactService = new ContactServiceImpl();
-        System.out.println("1 = display ");
-        System.out.println("2 = add ");
+        System.out.println("1 = display Booking");
+        System.out.println("2 = add Booking ");
         System.out.println("3 = Create new constracts ");
-        System.out.println("4 = edit ");
+        System.out.println("4 = edit contact ");
         System.out.println("5 = hiển thị hợp đồng ");
         System.out.println("6 = return menu");
-        int input = scanner.nextInt();
-        switch (input){
+        switch (choice()){
             case 1:{
                 bookingService.display();
                 break;

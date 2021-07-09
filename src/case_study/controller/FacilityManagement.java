@@ -12,16 +12,18 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import static case_study.controller.FuramaController.choice;
+
 public class FacilityManagement{
     public static void FacilityManagement(){
         Scanner scanner = new Scanner(System.in);
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
-        System.out.println("1 = display ");
-        System.out.println("2 = add ");
-        System.out.println("3 = hiển thị dịch vụ cần bảo trì");
+        System.out.println("1 = display Faciliti ");
+        System.out.println("2 = add Faciliti ");
+//        System.out.println("3 = hiển thị dịch vụ cần bảo trì");
         System.out.println("4 = tro ve ");
-        int input = scanner.nextInt();
-        switch (input){
+
+        switch (choice()){
             case 1:{
                 facilityService.display();
                 break;

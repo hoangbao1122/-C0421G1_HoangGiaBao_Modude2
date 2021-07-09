@@ -4,16 +4,18 @@ import case_study.serivce.CusAndEmp.CustomerServiceImpl;
 
 import java.util.Scanner;
 
+import static case_study.controller.FuramaController.choice;
+
 public class CustomerManagement {
     public static void CustomerManagement(){
         CustomerServiceImpl customerService = new CustomerServiceImpl();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1 = display ");
-        System.out.println("2 = add ");
-        System.out.println("3 = edit ");
+        System.out.println("1 = display Cus ");
+        System.out.println("2 = add Cus");
+        System.out.println("3 = edit Cus");
         System.out.println("4 = tro ve ");
-        int input = scanner.nextInt();
-        switch (input){
+
+        switch (choice()){
             case 1:{
                 customerService.display();
                 break;
